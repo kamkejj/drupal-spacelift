@@ -1,0 +1,25 @@
+$Footer-color: white !default
+$FooterMenu-color: $Footer-color !default;
+$FooterMenu-itemColor: white !default;
+$FooterMenu-fontSize: 1em !default;
+
+.Block.Block--menu-footer {
+  @include span-columns(6);
+  font-size: $FooterMenu-fontSize;
+}
+
+.Menu.Menu--footer {
+  .Menu-list {
+    text-align: right;
+    font-weight: 600;
+  }
+
+  .Menu-item {
+    display: inline;
+    padding-right: 1em;
+  }
+
+  .Menu-link {
+    color: $FooterMenu-itemColor;
+  }
+}

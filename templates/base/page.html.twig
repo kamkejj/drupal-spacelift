@@ -1,0 +1,91 @@
+<div role="document" class="l-Page">
+    {% if page.utility %}
+        <section class="l-Section l-Section--utility">
+            <div class="l-Section-container">
+                {{ page.utility }}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if page.header %}
+        <header class="l-Section l-Section--header">
+            <div class="l-Section-container">
+                {{ page.header }}
+            </div>
+        </header>
+    {% endif %}
+
+    {% if (page.breadcrumb or breadcrumb) and not is_front %}
+        <section class="l-Section l-Section--breadcrumb">
+            <div class="l-Section-container">
+                {% if page.breadcrumb %}
+                    {{ page.breadcrumb }}
+                {% elseif breadcrumb %}
+                    {{ breadcrumb }}
+                {% endif %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if page.featured %}
+        <section class="l-Section l-Section--featured">
+            <div class="l-Section-container">
+                {{ page.featured }}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if messages %}
+        <section class="l-Section l-Section--messages">
+            <div class="l-Section-container">
+                {{ messages }}
+            </div>
+        </section>
+    {% endif %}
+
+    <main role="main" class="l-Section l-Section--main">
+        <div class="l-Section-container">
+            {% if page.sidebar_first %}
+                <section class="l-Section l-Section--sidebar l-Section--sidebarFirst" role="complementary">
+                    <div class="l-Section-container">
+                        {{ page.sidebar_first }}
+                    </div>
+                </section>
+            {% endif %}
+
+            <section id="l-Section l-Section--content">
+                <div class="l-Section-container">
+                    {{ page.content }}
+                </div>
+            </section>
+
+            {% if page.sidebar_second %}
+                <section class="l-Section l-Section--sidebar l-Section--sidebarSecond" role="complementary">
+                    <div class="l-Section-container">
+                        {{ page.sidebar_second }}
+                    </div>
+                </section>
+            {% endif %}
+        </div>
+    </main>
+
+    {% if page.footer_top or page.footer_bottom %}
+        <footer class="l-Footer" role="contentinfo">
+          {% if page.footer_top %}
+            <section class="l-Section l-Section--footer l-Section--footerTop">
+              <div class="l-Section-container">
+                {{ page.footer_top }}
+              </div>
+            </section>
+          {% endif %}
+
+          {% if page.footer_bottom %}
+            <section class="l-Section l-Section--footer l-Section--footerBottom">
+              <div class="l-Section-container">
+                {{ page.footer_bottom }}
+              </div>
+            </section>
+          {% endif %}
+        </footer>
+    {% endif %}
+</div>

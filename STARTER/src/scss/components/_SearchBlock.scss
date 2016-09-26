@@ -1,0 +1,26 @@
+.Block.Block--search-form-block {
+  @include span-columns(2);
+
+  .Form {
+    .FormItem {
+      float: left;
+      margin: 0;
+
+      &.FormItem--type-search {
+        width: 75%;
+      }
+
+      &.FormItem--keys {
+        .FormItem-input {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .Form-wrapper {
+      float: left;
+      width: 25%;
+      margin: 0;
+    }
+  }
+}

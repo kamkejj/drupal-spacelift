@@ -1,0 +1,45 @@
+$base-spacing: 1.5em !default;
+$base-accentColor: #477DCA !default;
+$medium-screen: em(640) !default;
+$large-screen: em(860) !default;
+$darkGray: #38383a !default;
+$blue: blue !default;
+$yellow: yellow !default;
+
+$Footer-color: white !default;
+$Footer-topBorder--bottom: 0.25rem solid $yellow !default;
+$Footer-background: transparent !default;
+$Footer-background--top: $darkGray !default;
+$Footer-background--bottom: $blue !default;
+$Footer-titleFontSize: 1.2em !default;
+$Footer-bottomFontSize: 0.9em !default;
+
+.l-Footer {
+  background: $Footer-background;
+  margin-top: 1em;
+}
+
+.l-Section--footer {
+  color: $Footer-color;
+
+  &.l-Section--footerTop {
+    background: $Footer-background--top;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+  }
+
+  &.l-Section--footerBottom {
+    background: $Footer-background--bottom;
+    border-top: $Footer-topBorder--bottom;
+    vertical-align: middle;
+    font-size: $Footer-bottomFontSize;
+    padding-top: $Footer-bottomFontSize;
+    padding-bottom: $Footer-bottomFontSize;
+  }
+}
+
+.Block.Block--region-footer-top {
+  .Block-title {
+    font-size: $Footer-titleFontSize;
+  }
+}

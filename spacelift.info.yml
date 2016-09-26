@@ -1,0 +1,15 @@
+name: Spacelift
+type: theme
+base theme: classy
+description: A base Drupal theme spawned from Neato following the latest development standards and practices.
+core: 8.x
+regions:
+  utility: Utility
+  header: Header
+  breadcrumb: Breadcrumb
+  featured: Featured
+  sidebar_first: 'Sidebar first'
+  content: Content
+  sidebar_second: 'Sidebar second'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'

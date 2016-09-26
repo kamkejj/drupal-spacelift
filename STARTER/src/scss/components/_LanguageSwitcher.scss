@@ -1,0 +1,34 @@
+$yellow: yellow !default;
+$mediumGray: #555 !default;
+$LanguageSwitcher-fontSize: 0.7em !default;
+$LanguageSwitcher-toggleColor: white !default;
+$LanguageSwitcher-toggleColor--active: $mediumGray !default;
+$LanguageSwitcher-toggleBackground: transparent !default;
+$LanguageSwitcher-toggleBackground--active: $yellow !default;
+$LanguageSwitcher-marginTop: 0.45em !default;
+
+.Block.Block--language {
+  @include span-columns(1);
+  font-size: $LanguageSwitcher-fontSize;
+  margin-top: $LanguageSwitcher-marginTop;
+}
+
+.LanguageSwitcher-toggle {
+  color: $LanguageSwitcher-toggleColor;
+  background: $LanguageSwitcher-toggleBackground;
+  padding: 0.5em;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &.LanguageSwitcher-toggle--active {
+    color: $LanguageSwitcher-toggleColor--active;
+    background: $LanguageSwitcher-toggleBackground--active;
+  }
+}
+
+.LanguageSwitcher-links {
+  position: absolute;
+  display: none;
+  height: 0;
+}

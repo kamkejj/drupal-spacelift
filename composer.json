@@ -1,0 +1,20 @@
+{
+  "name": "drupal/spacelift",
+  "type": "drupal-theme",
+  "description": "A base Drupal theme spawned from Neato following the latest development standards and practices.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "http://drupal.org/project/spacelift",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Ben McClure (bmcclure)",
+      "homepage": "https://www.drupal.org/u/bmcclure",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/spacelift",
+    "source": "http://cgit.drupalcode.org/spacelift"
+  }
+}

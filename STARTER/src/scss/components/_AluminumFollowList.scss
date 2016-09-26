@@ -1,0 +1,36 @@
+$blue: blue !default;
+$mediumGray: #888 !default;
+
+$AluminumFollowList-linkColor: white !default;
+$AluminumFollowList-linkColor--active: $blue !default;
+$AluminumFollowList-backgroundColor: $mediumGray !default;
+$AluminumFollowList-backgroundColor--active: white !default;
+$AluminumFollowList-fontSize: 1.6em !default;
+
+.Block.Block--aluminum-follow {
+  @include span-columns(4);
+}
+
+.AluminumFollowList {
+  font-size: $AluminumFollowList-fontSize;
+
+  .AluminumFollowList-item {
+    display: inline-block;
+  }
+
+  .AluminumFollowList-link {
+    color: $AluminumFollowList-linkColor;
+
+    .fa-circle {
+      color: $AluminumFollowList-backgroundColor;
+    }
+
+    &:hover {
+      color: $AluminumFollowList-linkColor--active;
+
+      .fa-circle {
+        color: $AluminumFollowList-backgroundColor--active;
+      }
+    }
+  }
+}

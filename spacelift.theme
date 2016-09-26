@@ -1,0 +1,38 @@
+<?php
+use Drupal\block\Entity\Block;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageInterface;
+
+/**
+ * Implements hook_html_head_alter().
+ */
+function spacelift_html_head_alter(&$head_elements) {
+  // HTML5 charset declaration.
+  $head_elements['system_meta_content_type']['#attributes'] = array(
+    'charset' => 'utf-8',
+  );
+
+  // Optimize mobile viewport.
+  $head_elements['mobile_viewport'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1',
+    ),
+  );
+}
+
+function spacelift_preprocess_block(&$variables) {
+  if ($variables['base_plugin_id'] == 'language_block') {
+    $languageManager = \Drupal::languageManager();
+    $language = $languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
+
+    $variables['current_language'] = $language->getName();
+  }
+
+  $block_id = $variables['elements']['#id'];
+  $block = Block::load($block_id);
+
+  $variables['region'] = $block->getRegion();
+}

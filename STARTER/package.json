@@ -1,0 +1,15 @@
+{
+  "name": "STARTER",
+  "version": "8.1.2",
+  "devDependencies": {
+    "aluminum-capsule": "^0.4.0",
+    "aluminum-components": "^0.1.1",
+    "bourbon": "^4.2.7",
+    "bourbon-neat": "^1.8.0",
+    "eyeglass": "^1.1.0",
+    "gulp": "^3.9.0",
+    "normalize-scss": "^5.0.3",
+    "spacelift": "^0.1.0"
+  },
+  "dependencies": {}
+}

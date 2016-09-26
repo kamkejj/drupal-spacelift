@@ -1,0 +1,44 @@
+$yellow: yellow !default;
+$mediumGray: #555 !default;
+$UtilityMenu-itemColor: white !default;
+$UtilityMenu-itemColor--active: $mediumGray !default;
+$UtilityMenu-itemBackground: transparent !default;
+$UtilityMenu-itemBackground--active: $yellow !default;
+$UtilityMenu-itemPadding: 0.25em 0.5em !default;
+$UtilityMenu-borderRight: 1px solid white !default;
+
+.Block.Block--menu-utility-menu {
+  @include span-columns(8);
+}
+
+.Menu.Menu--utility-menu {
+  text-transform: capitalize;
+
+  .Menu-list {
+    text-align: right;
+  }
+
+  .Menu-item {
+    display: inline-block;
+    padding: 0 0.25em;
+    margin-left: -0.25em; // Account for space between list items
+    border-right: $UtilityMenu-borderRight;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .Menu-link {
+    background: $UtilityMenu-itemBackground;
+    color: $UtilityMenu-itemColor;
+    padding: $UtilityMenu-itemPadding;
+
+    &:hover,
+    &:active,
+    &.Menu-link--active {
+      color: $UtilityMenu-itemColor--active;
+      background: $UtilityMenu-itemBackground--active;
+    }
+  }
+}

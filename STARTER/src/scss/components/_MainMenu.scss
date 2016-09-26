@@ -1,0 +1,36 @@
+$blue: blue !default;
+$mediumGray: #555 !default;
+
+$MainMenu-fontSize: 1.1em !default;
+$MainMenu-color: $mediumGray !default;
+$MainMenu-color--active: $blue !default
+$MainMenu-textAlign: right !default;
+$MainMenu-itemMargin: 0 0.5em !default;
+$MainMenu-linkBorderBottom: none !default;
+$MainMenu-linkBorderBottom--active: none !default;
+
+.Block.Block--menu-main {
+  @include span-columns(7);
+}
+
+.Menu.Menu--main {
+  font-size: $MainMenu-fontSize;
+  text-align: $MainMenu-textAlign;
+
+  .Menu-item {
+    display: inline-block;
+    margin: $MainMenu-itemMargin;
+  }
+
+  .Menu-link {
+    color: $MainMenu-color;
+    border-bottom: $MainMenu-linkBorderBottom;
+
+    &:hover,
+    &:active,
+    &.Menu-link--active {
+      color: $MainMenu-color--active;
+      border-bottom: $MainMenu-linkBorderBottom--active;
+    }
+  }
+}

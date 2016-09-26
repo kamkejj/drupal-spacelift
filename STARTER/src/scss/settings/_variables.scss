@@ -1,0 +1,70 @@
+// Bourbon settings
+//$asset-pipeline: true;
+//$output-bourbon-deprecation-warnings: true;
+//$em-base: 14px;
+$prefix-for-webkit: false;
+$prefix-for-mozilla: false;
+$prefix-for-microsoft: false;
+$prefix-for-opera: false;
+$prefix-for-spec: false;
+
+// Typography
+$base-fontFamily: 'Arial', sans-serif;
+$heading-fontFamily: 'Arial', sans-serif;
+
+// Font sizes
+$base-fontSize: 1em;
+$heading-fontSize--h1: 2em;
+$heading-fontSize--h2: 1.6em;
+$heading-fontSize--h3: 1.4em;
+$heading-fontSize--h4: 1.3em;
+$heading-fontSize--h5: 1.2em;
+$heading-fontSize--h6: 1.1em;
+
+// Line heights
+$base-lineHeight: 1.5;
+$heading-lineHeight: 1.2;
+
+// Other sizes
+$base-borderRadius: 0;
+$base-spacing: $base-lineHeight * 1em;
+$small-spacing: $base-spacing / 2;
+$base-zIndex: 0;
+
+// Colors
+$blue: #003399;
+$yellow: #f7f02c;
+$darkGray: #38383a;
+$mediumGray: #555;
+$lightGray: #e9e9e9;
+
+// Font colors
+$base-fontColor: $mediumGray;
+$headline-color: $darkGray;
+$action-color: $blue;
+
+// Borders
+$base-borderColor: $lightGray;
+$medium-borderColor: #909090;
+$dark-borderColor: $mediumGray;
+$base-borderStyle: solid;
+$base-borderWidth: 1px;
+
+// Background colors
+$base-backgroundColor: #fff;
+$secondary-backgroundColor: $lightGray;
+
+// Forms
+$form-boxShadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-boxShadow--focus: $form-boxShadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Columns
+$sidebar-cols: 3;
+$sidebar-cols--two-sidebars: 3;
+$content-cols: 12;
+$content-cols--one-sidebar: 8;
+$content-cols--two-sidebars: 6;
