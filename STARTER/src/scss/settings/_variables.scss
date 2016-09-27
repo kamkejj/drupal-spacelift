@@ -1,3 +1,13 @@
+/**
+ * The following variables are used by default in various components and should not be deleted. These can be set to
+ * custom values in this file, but the variable names should not be modified.
+ *
+ * $primaryColor: the main color of the website (often used for header backgrounds, etc.)
+ * $secondaryColor: another common color (often used for buttons, links, etc.)
+ * $tertiaryColor: often used for highlighting certain elements, hover states, etc.
+ * $backgroundColor: used for main content background
+ */
+
 // Bourbon settings
 //$asset-pipeline: true;
 //$output-bourbon-deprecation-warnings: true;
@@ -32,7 +42,10 @@ $small-spacing: $base-spacing / 2;
 $base-zIndex: 0;
 
 // Colors
+$black: #000000;
 $blue: #003399;
+$red: #ff0000;
+$white: #ffffff;
 $yellow: #f7f02c;
 $darkGray: #38383a;
 $mediumGray: #555;
@@ -68,3 +81,9 @@ $sidebar-cols--two-sidebars: 3;
 $content-cols: 12;
 $content-cols--one-sidebar: 8;
 $content-cols--two-sidebars: 6;
+
+// Default variables
+$primaryColor: $blue;
+$secondaryColor: $yellow;
+$tertiaryColor: $red;
+$backgroundColor: $white;
