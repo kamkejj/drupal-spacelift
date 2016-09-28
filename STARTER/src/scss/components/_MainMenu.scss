@@ -1,9 +1,9 @@
-$blue: blue !default;
-$mediumGray: #555 !default;
+$primaryColor: magenta !default;
+$mediumGray: #666 !default;
 
 $MainMenu-fontSize: 1.1em !default;
 $MainMenu-color: $mediumGray !default;
-$MainMenu-color--active: $blue !default
+$MainMenu-color--active: $primaryColor !default
 $MainMenu-textAlign: right !default;
 $MainMenu-itemMargin: 0 0.5em !default;
 $MainMenu-linkBorderBottom: none !default;

@@ -2,15 +2,15 @@ $base-spacing: 1.5em !default;
 $base-accentColor: #477DCA !default;
 $medium-screen: em(640) !default;
 $large-screen: em(860) !default;
-$darkGray: #38383a !default;
-$blue: blue !default;
-$yellow: yellow !default;
+$primaryColor: magenta !default;
+$secondaryColor: cyan !default;
+$darkGray: #333 !default;
 
 $Footer-color: white !default;
-$Footer-topBorder--bottom: 0.25rem solid $yellow !default;
+$Footer-topBorder--bottom: 0.25rem solid $secondaryColor !default;
 $Footer-background: transparent !default;
 $Footer-background--top: $darkGray !default;
-$Footer-background--bottom: $blue !default;
+$Footer-background--bottom: $primaryColor !default;
 $Footer-titleFontSize: 1.2em !default;
 $Footer-bottomFontSize: 0.9em !default;
 

@@ -1,6 +1,6 @@
+$darkGray: #333 !default;
+$mediumGray: #666 !default;
 $lightGray: #ccc !default;
-$darkGray: #323232 !default;
-$mediumGray: #555 !default;
 
 $Breadcrumb-background: $lightGray !default;
 $Breadcrumb-border: 1px solid $darkGray !default;
@@ -9,9 +9,7 @@ $Breadcrumb-fontSize: 0.9em !default;
 
 .l-Section--breadcrumb {
   background: $Breadcrumb-background;
-  border: $Breadcrumb-border;
-  border-right-style: none;
-  border-left-style: none;
+  border: $Breadcrumb-border none;
   margin: 1rem 0; // REMs so it's not dependent on font size
 }
 

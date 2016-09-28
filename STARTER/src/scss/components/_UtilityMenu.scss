@@ -1,9 +1,11 @@
-$yellow: yellow !default;
-$mediumGray: #555 !default;
+$primaryColor: magenta !default;
+$secondaryColor: cyan !default;
+$mediumGray: #666 !default;
+
 $UtilityMenu-itemColor: white !default;
 $UtilityMenu-itemColor--active: $mediumGray !default;
 $UtilityMenu-itemBackground: transparent !default;
-$UtilityMenu-itemBackground--active: $yellow !default;
+$UtilityMenu-itemBackground--active: $secondaryColor !default;
 $UtilityMenu-itemPadding: 0.25em 0.5em !default;
 $UtilityMenu-borderRight: 1px solid white !default;
 

@@ -1,16 +1,16 @@
-$base-fontSize: 1em;
-$blue: blue !default;
-$yellow: yellow !default;
-$mediumGray: #aaa !default;
+$base-fontSize: 1em !default;
+$primaryColor: magenta !default;
+$secondaryColor: cyan !default;
+$mediumGray: #666 !default;
 
 $Utility-color: white !default;
-$Utility-backgroundColor: $blue !default;
-$Utility-borderColor: $yellow !default;
-$Utility-bottomBorder: 0.25em solid $Utility-borderColor;
+$Utility-backgroundColor: $primaryColor !default;
+$Utility-borderColor: $secondaryColor !default;
+$Utility-bottomBorder: 0.25em solid $Utility-borderColor !default;
 $Utility-linkColor: white !default;
 $Utility-linkColor--active: $mediumGray !default;
 $Utility-linkBackgroundColor: transparent !default;
-$Utility-linkBackgroundColor--active: $yellow !default;
+$Utility-linkBackgroundColor--active: $secondaryColor !default;
 
 .l-Section--utility {
   background-color: $Utility-backgroundColor;

@@ -1,10 +1,11 @@
-$yellow: yellow !default;
-$mediumGray: #555 !default;
+$secondaryColor: cyan !default;
+$mediumGray: #666 !default;
+
 $LanguageSwitcher-fontSize: 0.7em !default;
 $LanguageSwitcher-toggleColor: white !default;
 $LanguageSwitcher-toggleColor--active: $mediumGray !default;
 $LanguageSwitcher-toggleBackground: transparent !default;
-$LanguageSwitcher-toggleBackground--active: $yellow !default;
+$LanguageSwitcher-toggleBackground--active: $secondaryColor !default;
 $LanguageSwitcher-marginTop: 0.45em !default;
 
 .Block.Block--language {
