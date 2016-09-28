@@ -2,12 +2,14 @@ $primaryColor: magenta !default;
 $secondaryColor: cyan !default;
 $mediumGray: #666 !default;
 
-$UtilityMenu-itemColor: white !default;
-$UtilityMenu-itemColor--active: $mediumGray !default;
+$UtilityMenu-borderRight: 1px solid white !default;
+$UtilityMenu-fontSize: 1em !default;
 $UtilityMenu-itemBackground: transparent !default;
 $UtilityMenu-itemBackground--active: $secondaryColor !default;
+$UtilityMenu-itemColor: white !default;
+$UtilityMenu-itemColor--active: $mediumGray !default;
 $UtilityMenu-itemPadding: 0.25em 0.5em !default;
-$UtilityMenu-borderRight: 1px solid white !default;
+$UtilityMenu-textAlign: right !default;
 
 .Block.Block--menu-utility-menu {
   @include span-columns(8);
@@ -17,7 +19,7 @@ $UtilityMenu-borderRight: 1px solid white !default;
   text-transform: capitalize;
 
   .Menu-list {
-    text-align: right;
+    text-align: $UtilityMenu-textAlign;
   }
 
   .Menu-item {
