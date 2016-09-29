@@ -65,6 +65,9 @@ function drush_spacelift_generate($name) {
   drush_op('rename', "$subtheme_path/css/STARTER.css", "$subtheme_path/css/$machine_name.css");
   drush_op('rename', "$subtheme_path/src/scss/STARTER.scss", "$subtheme_path/src/scss/$machine_name.scss");
 
+  // Update the settings.yml file
+  drush_op('spacelift_file_str_replace', "$subtheme_path/config/install/$machine_name.settings.yml", 'STARTER', "$name");
+
   // Update the .info file
   drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.info.yml", 'Spacelift Starter', "$name");
 
@@ -83,7 +86,7 @@ function drush_spacelift_generate($name) {
   drush_op('spacelift_file_str_replace', "$subtheme_path/package.json", 'STARTER', "$machine_name");
 
   // Replace THEMENAME in STARTER.scss
-  drush_op('spacelift_file_str_replace', "$subtheme_path/scss/$machine_name.scss", 'THEMENAME', "$machine_name");
+  drush_op('spacelift_file_str_replace', "$subtheme_path/src/scss/$machine_name.scss", 'THEMENAME', "$machine_name");
 
   // Replace STARTER in the libraries.yml
   drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.libraries.yml", 'STARTER', "$machine_name");

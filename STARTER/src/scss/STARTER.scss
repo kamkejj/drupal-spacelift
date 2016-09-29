@@ -15,8 +15,9 @@
 
 // Import variables and core css values
 @import "settings/variables";
-@import "generated/icons";
 @import "base/fonts";
+@import "icons/**/*.scss";
+@import "fonts/**/*.scss";
 
 // Import base functions/mixins/styles
 @import "normalize";

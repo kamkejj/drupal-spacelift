@@ -1,5 +1,5 @@
 {
-  "name": "drupal/spacelift",
+  "name": "topfloor/spacelift",
   "type": "drupal-theme",
   "description": "A base Drupal theme spawned from Neato following the latest development standards and practices.",
   "keywords": ["Drupal"],
