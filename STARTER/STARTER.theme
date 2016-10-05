@@ -12,30 +12,25 @@ use Drupal\Core\Url;
  * @param array $variables
  */
 function STARTER_preprocess_html(&$variables) {
-  if (!empty($variables['page']['sidebar_first'])) {
-    $sidebar_left = $variables['page']['sidebar_first'];
-  }
+    $sidebar_left = !empty(trim(render($variables['page']['sidebar_first'])));
+    $sidebar_right = !empty(trim(render($variables['page']['sidebar_second'])));
 
-  if (!empty($variables['page']['sidebar_second'])) {
-    $sidebar_right = $variables['page']['sidebar_second'];
+    // Dynamic sidebars.
+    if ($sidebar_left && $sidebar_right) {
+      $variables['attributes']['class'][] = 'two-sidebars';
+    }
+    elseif (!$sidebar_left && $sidebar_right) {
+      $variables['attributes']['class'][] = 'one-sidebar';
+      $variables['attributes']['class'][] = 'sidebar-second';
+    }
+    elseif ($sidebar_left && !$sidebar_right) {
+      $variables['attributes']['class'][] = 'one-sidebar';
+      $variables['attributes']['class'][] = 'sidebar-first';
+    }
+    else {
+      $variables['attributes']['class'][] = 'no-sidebars';
+    }
   }
-
-  // Dynamic sidebars.
-  if (!empty($sidebar_left) && !empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'two-sidebars';
-  }
-  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'one-sidebar';
-    $variables['attributes']['class'][] = 'sidebar-second';
-  }
-  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'one-sidebar';
-    $variables['attributes']['class'][] = 'sidebar-first';
-  }
-  else {
-    $variables['attributes']['class'][] = 'no-sidebars';
-  }
-}
 
 /**
  * Implements template_preprocess_page.

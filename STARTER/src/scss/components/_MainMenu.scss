@@ -1,13 +1,13 @@
 $primaryColor: magenta !default;
 $mediumGray: #666 !default;
 
-$MainMenu-fontSize: 1.1em !default;
 $MainMenu-color: $mediumGray !default;
 $MainMenu-color--active: $primaryColor !default
-$MainMenu-textAlign: right !default;
+$MainMenu-fontSize: 1.1em !default;
 $MainMenu-itemMargin: 0 0.5em !default;
 $MainMenu-linkBorderBottom: none !default;
 $MainMenu-linkBorderBottom--active: none !default;
+$MainMenu-textAlign: right !default;
 
 .Block.Block--menu-main {
   @include span-columns(7);
