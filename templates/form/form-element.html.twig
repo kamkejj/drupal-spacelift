@@ -80,7 +80,12 @@
       {{ description.content }}
     </div>
   {% endif %}
-  {{ children }}
+  {% if children %}
+    <div class="FormItem-children">
+      {{ children }}
+    </div>
+  {% endif %}
+
   {% if suffix is not empty %}
     <span class="field-suffix">{{ suffix }}</span>
   {% endif %}
