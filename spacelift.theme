@@ -23,6 +23,30 @@ function spacelift_html_head_alter(&$head_elements) {
   );
 }
 
+function spacelift_set_interior_regions(&$variables, array $includedRegions) {
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $all_regions = system_region_list($theme, 'REGIONS_ALL');
+
+  $regions = array_intersect(array_keys($all_regions), $includedRegions);
+
+  foreach ($regions as $key => $region) {
+    $blocks = \Drupal::entityTypeManager()
+      ->getStorage('block')
+      ->loadByProperties(['theme' => $theme, 'region' => $region]);
+
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+
+    $build = array();
+    foreach ($blocks as $key => $block) {
+      if ($block->access('view')) {
+        $build[$key] = entity_view($block, 'block');
+      }
+    }
+
+    $variables[$region] = $build;
+  }
+}
+
 function spacelift_preprocess_block(&$variables) {
   if ($variables['base_plugin_id'] == 'language_block') {
     $languageManager = \Drupal::languageManager();
@@ -35,4 +59,10 @@ function spacelift_preprocess_block(&$variables) {
   $block = Block::load($block_id);
 
   $variables['region'] = $block->getRegion();
+
+  $variables['id'] = $variables['elements']['#id'];
+}
+
+function spacelift_preprocess_commerce_product(&$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
 }
