@@ -16,8 +16,9 @@
 // Import variables and core css values
 @import "settings/variables";
 @import "base/fonts";
-@import "icons/**/*.scss";
-@import "fonts/**/*.scss";
+
+// Import generated styles
+@import "generated/**/*.scss";
 
 // Import base functions/mixins/styles
 @import "normalize";
@@ -34,7 +35,11 @@
 @import "aluminum-capsule";
 @import "spacelift";
 @import "spacelift/elements";
-@import "spacelift/drupal";
+@import "aluminum-components/base";
+@import "aluminum-components/drupal";
+
+// Import theme mixins
+@import "mixins/**/*.scss";
 
 // Import site components
 @import "components/**/*.scss";

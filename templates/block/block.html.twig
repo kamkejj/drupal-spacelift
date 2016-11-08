@@ -37,7 +37,8 @@
   'Block',
   'Block--region-' ~ region|clean_class,
   'Block--' ~ configuration.provider|clean_class,
-  'Block--' ~ plugin_id|clean_class
+  'Block--' ~ plugin_id|clean_class,
+  'Block--' ~ id|clean_class
 ] %}
 
 <div{{ attributes.addClass(classes) }}>

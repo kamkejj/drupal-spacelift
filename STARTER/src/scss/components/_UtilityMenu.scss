@@ -1,48 +1,31 @@
-$primaryColor: magenta !default;
-$secondaryColor: cyan !default;
-$mediumGray: #666 !default;
+// Base variables
+$yellow: yellow !default;
+$mediumGray: #555 !default;
+$darkGray: #333 !default;
+$fontColor-utility: $darkGray !default;
 
-$UtilityMenu-borderRight: 1px solid white !default;
-$UtilityMenu-fontSize: 1em !default;
-$UtilityMenu-itemBackground: transparent !default;
-$UtilityMenu-itemBackground--active: $secondaryColor !default;
-$UtilityMenu-itemColor: white !default;
-$UtilityMenu-itemColor--active: $mediumGray !default;
-$UtilityMenu-itemPadding: 0.25em 0.5em !default;
+// Component variables
+$UtilityMenu-fontColor: $fontColor-utility !default;
+$UtilityMenu-fontColor--active: $mediumGray !default;
+$UtilityMenu-itemBackground--active: $yellow !default;
+$UtilityMenu-itemPadding: 0 0 0 .25em !default;
+$UtilityMenu-linkPadding: 0.25em 0.5em !default;
+$UtilityMenu-separatorColor: white;
+$UtilityMenu-separatorWidth: 1px;
 $UtilityMenu-textAlign: right !default;
+$UtilityMenu-margin: 0.15em 0 0 !default;
 
-.Block.Block--menu-utility-menu {
-  @include span-columns(8);
-}
-
-.Menu.Menu--utility-menu {
-  text-transform: capitalize;
-
-  .Menu-list {
-    text-align: $UtilityMenu-textAlign;
-  }
-
-  .Menu-item {
-    display: inline-block;
-    padding: 0 0.25em;
-    margin-left: -0.25em; // Account for space between list items
-    border-right: $UtilityMenu-borderRight;
-
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .Menu-link {
-    background: $UtilityMenu-itemBackground;
-    color: $UtilityMenu-itemColor;
-    padding: $UtilityMenu-itemPadding;
-
-    &:hover,
-    &:active,
-    &.Menu-link--active {
-      color: $UtilityMenu-itemColor--active;
-      background: $UtilityMenu-itemBackground--active;
-    }
-  }
-}
+@include InlineMenu(
+  $fontColor: $UtilityMenu-fontColor,
+  $itemPadding: $UtilityMenu-itemPadding,
+  $fontColor--active: $UtilityMenu-fontColor--active,
+  $textAlign: $UtilityMenu-textAlign,
+  $margin: $UtilityMenu-margin,
+  $linkPadding: $UtilityMenu-linkPadding,
+  $separatorColor: $UtilityMenu-separatorColor,
+  $separatorWidth: $UtilityMenu-separatorWidth,
+  $textTransform: capitalize,
+  $background--active: $UtilityMenu-itemBackground--active,
+  $componentName: "Menu",
+  $modifier: "utility"
+);

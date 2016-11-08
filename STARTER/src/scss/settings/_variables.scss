@@ -1,13 +1,3 @@
-/**
- * The following variables are used by default in various components and should not be deleted. These can be set to
- * custom values in this file, but the variable names should not be modified.
- *
- * $primaryColor: the main color of the website (often used for header backgrounds, etc.)
- * $secondaryColor: another common color (often used for buttons, links, etc.)
- * $tertiaryColor: often used for highlighting certain elements, hover states, etc.
- * $backgroundColor: used for main content background
- */
-
 // Bourbon settings
 //$asset-pipeline: true;
 //$output-bourbon-deprecation-warnings: true;
@@ -19,76 +9,76 @@ $prefix-for-opera: false;
 $prefix-for-spec: false;
 
 // Typography
-$base-fontFamily: 'Arial', sans-serif;
-$heading-fontFamily: 'Arial', sans-serif;
+$fontFamily-base: sans-serif;
+$fontFamily-heading: sans-serif;
 
 // Font sizes
-$base-fontSize: 1em;
-$heading-fontSize--h1: 2em;
-$heading-fontSize--h2: 1.6em;
-$heading-fontSize--h3: 1.4em;
-$heading-fontSize--h4: 1.3em;
-$heading-fontSize--h5: 1.2em;
-$heading-fontSize--h6: 1.1em;
-
-// Font weights
-$base-fontWeight: 400;
-$bold-fontWeight: 600;
-$thin-fontWeight: 200;
+$fontSize-base: 1em;
+$fontSize-h1: 1.6em;
+$fontSize-h2: 1.4em;
+$fontSize-h3: 1.3em;
+$fontSize-h4: 1.2em;
+$fontSize-h5: 1.1em;
+$fontSize-h6: 1.0em;
 
 // Line heights
-$base-lineHeight: 1.5;
-$heading-lineHeight: 1.2;
+$lineHeight-base: 1.5;
+$lineHeight-heading: 1.2;
 
-// Other sizes
-$base-borderRadius: 0;
-$base-spacing: $base-lineHeight * 1em;
-$small-spacing: $base-spacing / 2;
-$base-zIndex: 0;
+// Font weights
+$fontWeight-base: 400;
+$fontWeight-bold: 600;
+$fontWeight-thin: 200;
 
-// Colors
-$black: #000000;
-$blue: #003399;
-$red: #ff0000;
-$white: #ffffff;
-$yellow: #f7f02c;
-$darkGray: #38383a;
-$mediumGray: #555;
+// Border radii
+$borderRadius-base: 0;
+$borderRadius-button: 6px;
+
+// Spacing
+$spacing-base: $lineHeight-base * 1em;
+$spacing-fixed: 1.5rem;
+$spacing-small: $spacing-base / 2;
+
+// Z-indexes
+$zIndex-base: 0;
+
+// Named colors
 $lightGray: #e9e9e9;
+$mediumGray: #555;
+$darkGray: #38383a;
+$blue: #4b68f1;
+
+// Assigned colors
+$color-action: $blue;
+$color-actionAccent: white;
+$color-background: white;
+$color-background--alternate: $lightGray;
+$color-background--medium: $mediumGray;
+$color-border: $lightGray;
+$color-border--medium: #909090;
+$color-border--strong: $mediumGray;
+$color-input: $darkGray;
+$color-button: $color-action;
 
 // Font colors
-$base-fontColor: $mediumGray;
-$headline-color: $darkGray;
-$action-color: $blue;
+$fontColor-base: $mediumGray;
+$fontColor-heading: $darkGray;
+$fontColor-footer: white;
+$fontColor-utility: white;
+$fontColor-button: $darkGray;
 
 // Borders
-$base-borderColor: $lightGray;
-$medium-borderColor: #909090;
-$dark-borderColor: $mediumGray;
-$base-borderStyle: solid;
-$base-borderWidth: 1px;
+$borderStyle-base: solid;
+$borderWidth-base: 1px;
 
-// Background colors
-$base-backgroundColor: #fff;
-$secondary-backgroundColor: $lightGray;
+// Box shadows
+$boxShadow-base: 0 0 3px $color-border;
+$boxShadow-form: none;
 
 // Forms
 $form-boxShadow: inset 0 1px 3px rgba(#000, 0.06);
-$form-boxShadow--focus: $form-boxShadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+$form-boxShadow--focus: $form-boxShadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -0.3);
 
 // Animations
-$base-duration: 150ms;
-$base-timing: ease;
-
-// Columns
-$sidebar-cols: 3;
-$sidebar-cols--two-sidebars: 3;
-$content-cols: 12;
-$content-cols--one-sidebar: 8;
-$content-cols--two-sidebars: 6;
-
-// Default variables
-$primaryColor: $blue;
-$secondaryColor: $yellow;
-$tertiaryColor: $red;
-$backgroundColor: $white;
+$duration-base: 150ms;
+$timing-base: ease;

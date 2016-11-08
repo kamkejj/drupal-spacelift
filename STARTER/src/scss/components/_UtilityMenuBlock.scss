@@ -1,0 +1,5 @@
+$UtilityMenuBlock-columns: 8 !default;
+
+.Block.Block--menu-utility {
+  @include span-columns($UtilityMenuBlock-columns);
+}

@@ -1,0 +1,6 @@
+// Component variables
+$AluminumFollowBlock-columns: 4 !default;
+
+.Block.Block--aluminum-follow {
+  @include span-columns($AluminumFollowBlock-columns);
+}

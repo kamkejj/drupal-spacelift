@@ -1,0 +1,5 @@
+$SidebarBlock-columns: 12 !default;
+
+.PageSection--sidebar .Block {
+  @include span-columns($SidebarBlock-columns);
+}

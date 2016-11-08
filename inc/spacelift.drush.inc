@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains functions only needed for drush integration.
- */
 
 /**
  * Implementation of hook_drush_command().
@@ -30,23 +26,48 @@ function spacelift_drush_command() {
 }
 
 /**
+ * Returns a valid machine name based on the inputs provided to Drush
+ *
+ * @param string $name
+ *   The name of the theme
+ * @param string $machine_name
+ *   An optional machine name if already defined
+ *
+ * @return string
+ *   The machine name after all processing has been completed
+ */
+function drush_spacelift_generate_machine_name($name, $machine_name = '') {
+  if (empty($machine_name)) {
+    $machine_name = $name;
+  }
+
+  $machine_name = strtolower($machine_name);
+  $machine_name = preg_replace('/[^a-z0-9_-]+/', '', $machine_name);
+  $machine_name = str_replace('-', '_', $machine_name);
+
+  return $machine_name;
+}
+
+function drush_spacelift_usage_text() {
+  return 'USAGE:\tdrush sgt [name] --machine_name=[machine_name !OPTIONAL] --description=[description !OPTIONAL]';
+}
+
+/**
  * Create a spacelift sub-theme.
+ *
+ * @param string $name
+ *   The name of the theme
  */
 function drush_spacelift_generate($name) {
-  $description = drush_get_option('description');
-  $machine_name = drush_get_option('machine_name');
-
   if (empty($name)) {
-    drush_set_error(dt("Please provide a name for the sub-theme.\nUSAGE:\tdrush sgt [name] --machine_name=[machine_name !OPTIONAL] --description=[description !OPTIONAL]\n"));
+    drush_set_error(dt("Please provide a name for the sub-theme.\n" . drush_spacelift_usage_text() . "\n"));
+
     return;
   }
 
-  //Filter everything but letters, numbers, underscores, and hyphens
-  $machine_name = !empty($machine_name) ? preg_replace('/[^a-z0-9_-]+/', '', strtolower($machine_name)) : preg_replace('/[^a-z0-9_-]+/', '', strtolower($name));
-  // Eliminate hyphens
-  $machine_name = str_replace('-', '_', $machine_name);
+  $machine_name = drush_spacelift_generate_machine_name($name, drush_get_option('machine_name'));
+  $description = drush_get_option('description');
 
-  // Find theme paths.
   $spacelift_path = drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . drupal_get_path('theme', 'spacelift');
   $subtheme_path = dirname($spacelift_path) . '/' . $machine_name;
   $relative_path = str_replace('spacelift', $machine_name, drupal_get_path('theme', 'spacelift'));

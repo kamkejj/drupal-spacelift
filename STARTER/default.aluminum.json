@@ -1,4 +1,7 @@
 {
+  "assets": {
+
+  },
   "browserSync": {
     "enabled": false,
     "hostname": "localhost",
