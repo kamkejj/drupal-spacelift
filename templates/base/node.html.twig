@@ -77,7 +77,8 @@
 {%
   set node_classes = [
     'Node',
-    'Node--type-' ~ type,
+    'Node--type-' ~ node.bundle|clean_class,
+    'Node--display-' ~ view_mode|clean_class,
     'Node--id-' ~ node.id,
   ]
 %}
