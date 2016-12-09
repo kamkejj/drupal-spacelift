@@ -1,7 +1,7 @@
 name: Spacelift
 type: theme
 base theme: classy
-description: A base Drupal theme spawned from Neato following the latest development standards and practices.
+description: A forward-thinking, developer-focused base theme for Drupal 8.
 core: 8.x
 regions:
   utility: Utility

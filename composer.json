@@ -1,7 +1,7 @@
 {
   "name": "drupal/spacelift",
   "type": "drupal-theme",
-  "description": "A base Drupal theme spawned from Neato following the latest development standards and practices.",
+  "description": "Spacelift is a forward-thinking, developer-focused base theme for Drupal 8.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
   "homepage": "http://drupal.org/project/spacelift",

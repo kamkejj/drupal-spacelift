@@ -22,35 +22,6 @@ function spacelift_html_head_alter(&$head_elements) {
 }
 
 /**
- * Adds interior regions into $variables array
- * @param $variables
- * @param array $includedRegions
- */
-function spacelift_set_interior_regions(&$variables, array $includedRegions) {
-  $theme = \Drupal::theme()->getActiveTheme()->getName();
-  $all_regions = system_region_list($theme, 'REGIONS_ALL');
-
-  $regions = array_intersect(array_keys($all_regions), $includedRegions);
-
-  foreach ($regions as $key => $region) {
-    $blocks = \Drupal::entityTypeManager()
-      ->getStorage('block')
-      ->loadByProperties(['theme' => $theme, 'region' => $region]);
-
-    uasort($blocks, 'Drupal\block\Entity\Block::sort');
-
-    $build = [];
-    foreach ($blocks as $blockKey => $block) {
-      if ($block->access('view')) {
-        $build[$blockKey] = entity_view($block, 'block');
-      }
-    }
-
-    $variables[$region] = $build;
-  }
-}
-
-/**
  * Implements hook_preprocess_block().
  */
 function spacelift_preprocess_block(&$variables) {
@@ -86,5 +57,35 @@ function spacelift_theme_suggestions_menu_alter(array &$suggestions, array $vari
     $hook = str_replace(['block-', '-'], ['', '_'], $variables['attributes']['block']);
 
     $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
+  }
+}
+
+/**
+ * Adds interior regions into $variables array
+ *
+ * @param $variables
+ * @param array $includedRegions
+ */
+function spacelift_set_interior_regions(&$variables, array $includedRegions) {
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $all_regions = system_region_list($theme, 'REGIONS_ALL');
+
+  $regions = array_intersect(array_keys($all_regions), $includedRegions);
+
+  foreach ($regions as $key => $region) {
+    $blocks = \Drupal::entityTypeManager()
+      ->getStorage('block')
+      ->loadByProperties(['theme' => $theme, 'region' => $region]);
+
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+
+    $build = [];
+    foreach ($blocks as $blockKey => $block) {
+      if ($block->access('view')) {
+        $build[$blockKey] = entity_view($block, 'block');
+      }
+    }
+
+    $variables[$region] = $build;
   }
 }

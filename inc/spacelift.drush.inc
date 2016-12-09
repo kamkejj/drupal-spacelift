@@ -70,7 +70,6 @@ function drush_spacelift_generate($name) {
 
   $spacelift_path = drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . drupal_get_path('theme', 'spacelift');
   $subtheme_path = dirname($spacelift_path) . '/' . $machine_name;
-  $relative_path = str_replace('spacelift', $machine_name, drupal_get_path('theme', 'spacelift'));
 
   // Make a fresh copy of the subtheme.
   $s = drush_copy_dir("$spacelift_path/STARTER/", $subtheme_path);
