@@ -99,7 +99,7 @@ function drush_spacelift_generate($name) {
   drush_op('rename', "$subtheme_path/src/scss/STARTER.scss", "$subtheme_path/src/scss/$machine_name.scss");
 
   // Update the settings.yml file.
-  drush_op('spacelift_file_str_replace', "$subtheme_path/config/install/$machine_name.settings.yml", 'STARTER', "$name");
+  drush_op('spacelift_file_str_replace', "$subtheme_path/config/install/$machine_name.settings.yml", 'STARTER', "$machine_name");
 
   // Update the .info file.
   drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.info.yml", 'Spacelift Starter', "$name");
