@@ -1,13 +1,14 @@
 <?php
+
 /**
  * @file
- * Drush subtheme generation functionality for the Spacelift theme
+ * Drush subtheme generation functionality for the Spacelift theme.
  *
  * Extends some entities user preprocess hooks and offers some helper functions.
  */
 
 /**
- * Implementation of hook_drush_command().
+ * Implements hook_drush_command().
  */
 function spacelift_drush_command() {
   $items = array();
@@ -35,12 +36,12 @@ function spacelift_drush_command() {
  * Returns a valid machine name based on the inputs provided to Drush.
  *
  * @param string $name
- *   The name of the theme
+ *   The name of the theme.
  * @param string $machine_name
- *   An optional machine name if already defined
+ *   An optional machine name if already defined.
  *
  * @return string
- *   The machine name after all processing has been completed
+ *   The machine name after all processing has been completed.
  */
 function drush_spacelift_generate_machine_name($name, $machine_name = '') {
   if (empty($machine_name)) {
@@ -58,7 +59,7 @@ function drush_spacelift_generate_machine_name($name, $machine_name = '') {
  * Prints usage text about the "sgt" command.
  *
  * @return string
- *   The usage text string
+ *   The usage text string.
  */
 function drush_spacelift_usage_text() {
   return 'USAGE:\tdrush sgt [name] --machine_name=[machine_name !OPTIONAL] --description=[description !OPTIONAL]';
@@ -68,7 +69,7 @@ function drush_spacelift_usage_text() {
  * Create a spacelift sub-theme.
  *
  * @param string $name
- *   The name of the theme
+ *   The name of the theme.
  */
 function drush_spacelift_generate($name) {
   if (empty($name)) {
@@ -135,11 +136,11 @@ function drush_spacelift_generate($name) {
 /**
  * Internal helper: Replace strings in a file.
  *
- * @param $file_path
+ * @param string $file_path
  *   The path to the file to replace strings within
- * @param $find
+ * @param string $find
  *   The text to find within the file
- * @param $replace
+ * @param string $replace
  *   The text to replace the $find string with in the file
  */
 function spacelift_file_str_replace($file_path, $find, $replace) {

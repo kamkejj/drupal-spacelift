@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- * The main theme file for Spacelift
+ * The main theme file for Spacelift.
  *
  * Extends some entities user preprocess hooks and offers some helper functions.
  */
@@ -70,9 +71,9 @@ function spacelift_theme_suggestions_menu_alter(array &$suggestions, array $vari
  * Adds interior regions into $variables array.
  *
  * @param array $variables
- *   The preprocess variables
+ *   The preprocess variables.
  * @param array $includedRegions
- *   The theme regions to include
+ *   The theme regions to include.
  */
 function spacelift_set_interior_regions(array &$variables, array $includedRegions) {
   $theme = \Drupal::theme()->getActiveTheme()->getName();

@@ -22,13 +22,16 @@ function STARTER_preprocess_html(array &$variables) {
   // Dynamic sidebars.
   if (!empty($sidebar_left) && !empty($sidebar_right)) {
     $variables['attributes']['class'][] = 'two-sidebars';
-  } elseif (empty($sidebar_left) && !empty($sidebar_right)) {
+  }
+  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
     $variables['attributes']['class'][] = 'one-sidebar';
     $variables['attributes']['class'][] = 'sidebar-second';
-  } elseif (!empty($sidebar_left) && empty($sidebar_right)) {
+  }
+  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
     $variables['attributes']['class'][] = 'one-sidebar';
     $variables['attributes']['class'][] = 'sidebar-first';
-  } else {
+  }
+  else {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
 }
@@ -38,5 +41,9 @@ function STARTER_preprocess_html(array &$variables) {
  */
 function STARTER_preprocess_page(array &$variables) {
   $site_name = \Drupal::configFactory()->get('system.site')->get('name');
-  $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
+  $variables['linked_site_name'] = [
+    '#type' => 'link',
+    '#title' => $site_name,
+    '#url' => Url::fromRoute('<front>')
+  ];
 }
