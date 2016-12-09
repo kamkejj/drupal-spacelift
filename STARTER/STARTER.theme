@@ -44,6 +44,6 @@ function STARTER_preprocess_page(array &$variables) {
   $variables['linked_site_name'] = [
     '#type' => 'link',
     '#title' => $site_name,
-    '#url' => Url::fromRoute('<front>')
+    '#url' => Url::fromRoute('<front>'),
   ];
 }

@@ -137,11 +137,11 @@ function drush_spacelift_generate($name) {
  * Internal helper: Replace strings in a file.
  *
  * @param string $file_path
- *   The path to the file to replace strings within
+ *   The path to the file to replace strings within.
  * @param string $find
- *   The text to find within the file
+ *   The text to find within the file.
  * @param string $replace
- *   The text to replace the $find string with in the file
+ *   The text to replace the $find string with in the file.
  */
 function spacelift_file_str_replace($file_path, $find, $replace) {
   $file_contents = file_get_contents($file_path);
