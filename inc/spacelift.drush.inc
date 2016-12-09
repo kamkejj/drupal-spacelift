@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Drush subtheme generation functionality for the Spacelift theme
+ *
+ * Extends some entities user preprocess hooks and offers some helper functions.
+ */
 
 /**
  * Implementation of hook_drush_command().
@@ -26,7 +32,7 @@ function spacelift_drush_command() {
 }
 
 /**
- * Returns a valid machine name based on the inputs provided to Drush
+ * Returns a valid machine name based on the inputs provided to Drush.
  *
  * @param string $name
  *   The name of the theme
@@ -48,6 +54,12 @@ function drush_spacelift_generate_machine_name($name, $machine_name = '') {
   return $machine_name;
 }
 
+/**
+ * Prints usage text about the "sgt" command.
+ *
+ * @return string
+ *   The usage text string
+ */
 function drush_spacelift_usage_text() {
   return 'USAGE:\tdrush sgt [name] --machine_name=[machine_name !OPTIONAL] --description=[description !OPTIONAL]';
 }
@@ -77,7 +89,7 @@ function drush_spacelift_generate($name) {
     return;
   }
 
-  // Rename files and fill in the theme machine name
+  // Rename files and fill in the theme machine name.
   drush_op('rename', "$subtheme_path/STARTER.info.yml.txt", "$subtheme_path/$machine_name.info.yml");
   drush_op('rename', "$subtheme_path/STARTER.libraries.yml", "$subtheme_path/$machine_name.libraries.yml");
   drush_op('rename', "$subtheme_path/STARTER.theme", "$subtheme_path/$machine_name.theme");
@@ -85,30 +97,30 @@ function drush_spacelift_generate($name) {
   drush_op('rename', "$subtheme_path/css/STARTER.css", "$subtheme_path/css/$machine_name.css");
   drush_op('rename', "$subtheme_path/src/scss/STARTER.scss", "$subtheme_path/src/scss/$machine_name.scss");
 
-  // Update the settings.yml file
+  // Update the settings.yml file.
   drush_op('spacelift_file_str_replace', "$subtheme_path/config/install/$machine_name.settings.yml", 'STARTER', "$name");
 
-  // Update the .info file
+  // Update the .info file.
   drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.info.yml", 'Spacelift Starter', "$name");
 
-  // Change the description of the theme
+  // Change the description of the theme.
   if (!empty($description)) {
     drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.info.yml", 'Custom sub-theme based on the the Spacelift base theme.', "$description");
   }
 
-  // Replace STARTER in info.yml
+  // Replace STARTER in info.yml.
   drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.info.yml", 'STARTER', "$machine_name");
 
-  // Rename functions in .theme
+  // Rename functions in .theme.
   drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.theme", 'STARTER', "$machine_name");
 
-  // Replace STARTER in package.json
+  // Replace STARTER in package.json.
   drush_op('spacelift_file_str_replace', "$subtheme_path/package.json", 'STARTER', "$machine_name");
 
-  // Replace THEMENAME in STARTER.scss
+  // Replace THEMENAME in STARTER.scss.
   drush_op('spacelift_file_str_replace', "$subtheme_path/src/scss/$machine_name.scss", 'THEMENAME', "$machine_name");
 
-  // Replace STARTER in the libraries.yml
+  // Replace STARTER in the libraries.yml.
   drush_op('spacelift_file_str_replace', "$subtheme_path/$machine_name.libraries.yml", 'STARTER', "$machine_name");
 
   // Notify user of the newly created theme.
@@ -122,6 +134,13 @@ function drush_spacelift_generate($name) {
 
 /**
  * Internal helper: Replace strings in a file.
+ *
+ * @param $file_path
+ *   The path to the file to replace strings within
+ * @param $find
+ *   The text to find within the file
+ * @param $replace
+ *   The text to replace the $find string with in the file
  */
 function spacelift_file_str_replace($file_path, $find, $replace) {
   $file_contents = file_get_contents($file_path);

@@ -9,9 +9,8 @@ use Drupal\Core\Url;
 
 /**
  * Implements template_preprocess_html().
- * @param array $variables
  */
-function STARTER_preprocess_html(&$variables) {
+function STARTER_preprocess_html(array &$variables) {
   if (!empty($variables['page']['sidebar_first'])) {
     $sidebar_left = $variables['page']['sidebar_first'];
   }
@@ -23,31 +22,21 @@ function STARTER_preprocess_html(&$variables) {
   // Dynamic sidebars.
   if (!empty($sidebar_left) && !empty($sidebar_right)) {
     $variables['attributes']['class'][] = 'two-sidebars';
-  }
-  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
+  } elseif (empty($sidebar_left) && !empty($sidebar_right)) {
     $variables['attributes']['class'][] = 'one-sidebar';
     $variables['attributes']['class'][] = 'sidebar-second';
-  }
-  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
+  } elseif (!empty($sidebar_left) && empty($sidebar_right)) {
     $variables['attributes']['class'][] = 'one-sidebar';
     $variables['attributes']['class'][] = 'sidebar-first';
-  }
-  else {
+  } else {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
 }
 
 /**
  * Implements template_preprocess_page.
- * @param array $variables
  */
-function STARTER_preprocess_page(&$variables) {
+function STARTER_preprocess_page(array &$variables) {
   $site_name = \Drupal::configFactory()->get('system.site')->get('name');
   $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
 }
-
-/**
- * Implements template_preprocess_node.
- * @param array $variables
- */
-function STARTER_preprocess_node(&$variables) {}

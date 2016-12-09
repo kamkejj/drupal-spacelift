@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * The main theme file for Spacelift
+ *
+ * Extends some entities user preprocess hooks and offers some helper functions.
+ */
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Language\LanguageInterface;
@@ -61,18 +67,20 @@ function spacelift_theme_suggestions_menu_alter(array &$suggestions, array $vari
 }
 
 /**
- * Adds interior regions into $variables array
+ * Adds interior regions into $variables array.
  *
- * @param $variables
+ * @param array $variables
+ *   The preprocess variables
  * @param array $includedRegions
+ *   The theme regions to include
  */
-function spacelift_set_interior_regions(&$variables, array $includedRegions) {
+function spacelift_set_interior_regions(array &$variables, array $includedRegions) {
   $theme = \Drupal::theme()->getActiveTheme()->getName();
   $all_regions = system_region_list($theme, 'REGIONS_ALL');
 
   $regions = array_intersect(array_keys($all_regions), $includedRegions);
 
-  foreach ($regions as $key => $region) {
+  foreach ($regions as $region) {
     $blocks = \Drupal::entityTypeManager()
       ->getStorage('block')
       ->loadByProperties(['theme' => $theme, 'region' => $region]);
