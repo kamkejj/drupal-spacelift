@@ -39,6 +39,13 @@
  * @see template_process()
  */
 #}
+{%
+set body_classes = [
+  'Site',
+  not root_path ? 'Site--frontPage' : 'Site--path-' ~ root_path|clean_class,
+]
+%}
+
 <!DOCTYPE html>
 <html{{ html_attributes }}>
 <head>
@@ -47,7 +54,7 @@
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
 </head>
-<body{{ attributes.addClass('Site') }}>
+<body{{ attributes.addClass(body_classes)  }}>
   {% if page_top %}
     {{ page_top }}
   {% endif %}
