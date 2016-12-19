@@ -39,6 +39,15 @@ function spacelift_preprocess_block(&$variables) {
     $variables['current_language'] = $language->getName();
   }
 
+  $provider = $variables['elements']['#configuration']['provider'];
+
+  if ($provider == 'block_content') {
+    /** @var \Drupal\block_content\BlockContentInterface $blockContent */
+    $blockContent = $variables['elements']['content']['#block_content'];
+
+    $variables['block_type'] = $blockContent->bundle();
+  }
+
   $block_id = $variables['elements']['#id'];
   $block = Block::load($block_id);
 
