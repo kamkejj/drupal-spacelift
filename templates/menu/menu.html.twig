@@ -42,10 +42,10 @@
     {% if menu_level == 0 %}
       {% set ul_attributes = attributes.addClass(ul_classes) %}
     {% else %}
-      {% set ul_attributes = ' class="' ~ ul_classes|join(' ') ~ '"' %}
+      {% set ul_attributes = ' class="' ~ ul_classes|raw|join(' ') ~ '"' %}
     {% endif %}
 
-    <ul{{ ul_attributes }}>
+    <ul{{ ul_attributes|raw }}>
       {% for item in items %}
         {%
           set classes = [
