@@ -26,6 +26,16 @@ function spacelift_html_head_alter(&$head_elements) {
       'content' => 'width=device-width, initial-scale=1',
     ],
   ];
+
+  $head_elements['x_ua_compatible'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+      'http-equiv' => 'x-ua-compatible',
+      'content' => 'IE=edge'
+    ],
+    '#weight' => -1001,
+  ];
 }
 
 /**
