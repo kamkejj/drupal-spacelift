@@ -16,12 +16,7 @@
  * @see template_preprocess_user()
  */
 #}
-<article{{ attributes.addClass('User') }}>
-  <div class="Field Field--label-inline">
-    <div class="Field-label">Username</div>
-    <div class="Field-item">{{ user.getUsername() }}</div>
-  </div>
-
+<article{{ attributes.addClass('UserProfile') }}>
   {% if content %}
     {{- content -}}
   {% endif %}
