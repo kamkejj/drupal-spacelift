@@ -11,5 +11,7 @@
     "normalize-scss": "^5.0.3",
     "spacelift": "^0.2.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-notifier": "^4.6.1"
+  }
 }
