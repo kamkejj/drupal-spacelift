@@ -84,7 +84,7 @@ receive updates for the base theme without losing your work.
 after you are done with step 2.
 2. Enter the drush command: `drush sgt [THEMENAME] [Description !Optional]`
 3. Drush will generate your brand new theme in a directory under `/themes`.
-4. You may not enable your new theme and make it the default if you wish.
+4. You may enable your new theme and make it the default if you wish.
 
 
 **CONTACT**
